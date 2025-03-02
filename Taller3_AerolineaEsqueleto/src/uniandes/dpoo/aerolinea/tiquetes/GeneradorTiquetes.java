@@ -47,17 +47,8 @@ public class GeneradorTiquetes
      */
     public static void registrarTiquete( Tiquete unTiquete )
     {
-        // TODO implementar
-    }
-
-    /**
-     * Revisa si ya existe un tiquete con el código dado
-     * @param codigoTiquete El código que se quiere consultar
-     * @return Retorna true si ya se tenía registrado un tiquete con el código dado
-     */
-    public static boolean validarTiquete( String codigoTiquete )
-    {
-        // TODO implementar
-        return false;
+        // Agregar el código del tiquete al conjunto de códigos usados
+        codigos.add(unTiquete.darCodigo());
     }
 }
+

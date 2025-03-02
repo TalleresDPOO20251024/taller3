@@ -5,34 +5,53 @@ package uniandes.dpoo.aerolinea.modelo;
  */
 public class Ruta
 {
-    // TODO completar
+    private String codigoRuta;
+    private Aeropuerto aeropuertoOrigen;
+    private Aeropuerto aeropuertoDestino;
+    private int duracionMinutos;
+    private double tarifaBaja;
+    private double tarifaAlta;
 
+    public Ruta(String codigoRuta, Aeropuerto aeropuertoOrigen, Aeropuerto aeropuertoDestino, int duracionMinutos, double tarifaBaja, double tarifaAlta) {
+        this.codigoRuta = codigoRuta;
+        this.aeropuertoOrigen = aeropuertoOrigen;
+        this.aeropuertoDestino = aeropuertoDestino;
+        this.duracionMinutos = duracionMinutos;
+        this.tarifaBaja = tarifaBaja;
+        this.tarifaAlta = tarifaAlta;
+    }
 
-    /**
-     * Dada una cadena con una hora y minutos, retorna los minutos.
-     * 
-     * Por ejemplo, para la cadena '715' retorna 15.
-     * @param horaCompleta Una cadena con una hora, donde los minutos siempre ocupan los dos últimos caracteres
-     * @return Una cantidad de minutos entre 0 y 59
-     */
-    public static int getMinutos( String horaCompleta )
-    {
-        int minutos = Integer.parseInt( horaCompleta ) % 100;
+    public String getCodigoRuta() {
+        return codigoRuta;
+    }
+
+    public Aeropuerto getAeropuertoOrigen() {
+        return aeropuertoOrigen;
+    }
+
+    public Aeropuerto getAeropuertoDestino() {
+        return aeropuertoDestino;
+    }
+
+    public int getDuracionMinutos() {
+        return duracionMinutos;
+    }
+
+    public double getTarifaBaja() {
+        return tarifaBaja;
+    }
+
+    public double getTarifaAlta() {
+        return tarifaAlta;
+    }
+
+    public static int getMinutos(String horaCompleta) {
+        int minutos = Integer.parseInt(horaCompleta) % 100;
         return minutos;
     }
 
-    /**
-     * Dada una cadena con una hora y minutos, retorna las horas.
-     * 
-     * Por ejemplo, para la cadena '715' retorna 7.
-     * @param horaCompleta Una cadena con una hora, donde los minutos siempre ocupan los dos últimos caracteres
-     * @return Una cantidad de horas entre 0 y 23
-     */
-    public static int getHoras( String horaCompleta )
-    {
-        int horas = Integer.parseInt( horaCompleta ) / 100;
+    public static int getHoras(String horaCompleta) {
+        int horas = Integer.parseInt(horaCompleta) / 100;
         return horas;
     }
-
-    
 }
